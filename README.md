@@ -1,14 +1,17 @@
 
   # **PWA Online/Offline Budget Tracker**
 
-
-  The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
   
+  The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
+ 
+  <br>
+  <img src="./assets/offline.png">
+  <img src="./assets/online.png">
+
   ## license
   
-  
+  <img src = "https://img.shields.io/static/v1?label=license&message=None&color=">
 
-  <img src = "https://img.shields.io/static/v1?label=license&message=&color=blue">
 
 
   ## Table of contents
@@ -37,8 +40,15 @@
   
   Link to GitHub: https://github.com/cracso
 
-  ## Test
-  npm test
+  ## Technologies
+  
+  * Node Js
+  * Express
+  * Mongo DB
+  * mongoose
+  * Morgan(dev)
+  * HTML
+  * CSS
 
   ## Questions
   
