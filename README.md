@@ -21,17 +21,13 @@
   [Usage](#Usage)
   [License](#License)
   [Contributors](#Contributors)
-  [Test](#Test)
+  [Technologies](#Technologies)
   [Questions](#Questions)
 
   ## Installation
   
+  run npm i from cli then node server.js
 
-   ## Usage
-  
-
-  ## License
-  
 
   ## Contributing
       
