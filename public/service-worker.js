@@ -21,24 +21,24 @@ const FILES_TO_CACHE = [
     );
   });
   
-  self.addEventListener('activate', (event) => {
-    const currentCaches = [PRECACHE, RUNTIME];
-    event.waitUntil(
-      caches
-        .keys()
-        .then((cacheNames) => {
-          return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
-        })
-        .then((cachesToDelete) => {
-          return Promise.all(
-            cachesToDelete.map((cacheToDelete) => {
-              return caches.delete(cacheToDelete);
-            })
-          );
-        })
-        .then(() => self.clients.claim())
-    );
-  });
+  // self.addEventListener('activate', (event) => {
+  //   const currentCaches = [PRECACHE, RUNTIME];
+  //   event.waitUntil(
+  //     caches
+  //       .keys()
+  //       .then((cacheNames) => {
+  //         return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
+  //       })
+  //       .then((cachesToDelete) => {
+  //         return Promise.all(
+  //           cachesToDelete.map((cacheToDelete) => {
+  //             return caches.delete(cacheToDelete);
+  //           })
+  //         );
+  //       })
+  //       .then(() => self.clients.claim())
+  //   );
+  // });
   
   self.addEventListener('fetch', (event) => {
     if (event.request.url.startsWith("/api/")) {
@@ -58,5 +58,21 @@ const FILES_TO_CACHE = [
         })
       );
     }
+
+
+    // event.respondWith(fetch(event.request).catch(function(){
+    //   return caches.match(event.request).then(function(response){
+    //     if(response){
+    //       return response;
+    //     }else if(event.request.headers.get("accept).includes("text/html")){
+    //       return caches.match("/");
+    //     })
+    //     }
+    //   })
+    // }))
+
+
   });
+
+ 
   
