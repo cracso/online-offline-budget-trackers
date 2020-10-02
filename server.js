@@ -6,6 +6,10 @@ const compression = require("compression");
 const PORT = 3000;
 
 const app = express();
+const path = require("path");
+
+const mainDir = path.join(__dirname, "/public");
+
 
 app.use(logger("dev"));
 
@@ -27,6 +31,9 @@ mongoose.connect(
 
 // routes
 app.use(require("./routes/api.js"));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(mainDir, "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
